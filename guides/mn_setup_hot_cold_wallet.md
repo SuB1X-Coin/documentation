@@ -25,11 +25,45 @@ This is normally run at home, behind firewall, without direct connectivity from 
 ## Requirements
 
 ### Hot Wallet
-* Ubuntu 14.04 or 16.04 running on a VPS such as Vultr, or other server running 24/7
-* Static IP Address
+* Ubuntu 14.04 or 16.04 running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
+* Public IP Address
 * Basic Linux skills
+* 1GB of RAM, 20GB or more disk space
+
+You can get servers like this for $5 a month and can run 2,3 masernode wallets from different coins if the monthly cost is a concern.
 
 ### Cold Wallet
 * Windows 7 or higher, Mac OS or Linux
 
 ---
+
+
+## **Hot** MasterNode VPS Setup(Part 1) with Linux CLI only wallet
+
+This will run 24/7 and provide services to the network via TCP port **9020** for which it will be rewarded with coins. It will run with an empty wallet reducing the risk of loosing the funds in the event of an attack.
+
+### 1. Get a VPS server from a provider like Vultr, DigitalOcean, Linode, Amazon AWS, etc. 
+
+Requirements:
+ * Linux VPS (**Ubuntu 14.04** 64 bit and **Ubuntu 16.04** 64 bit) - Choose the correct version for your OS from the release page
+ * Dedicated Public IP Address
+ * Recommended at least 1GB of RAM 
+
+
+### 2. Login via SSH into the server and type the following command in the console as root:
+
+If you are using Windows, [PuTTY](https://putty.org) is a very good SSH client that you can use to connect to a remote Linux server.
+If you are running a VPS from Vultr or similar, you need to use SSH such as putty if you want to copy and paste these commands otherwise you will have to type them all out!
+
+Update and Install new packages by running these commands line by line *ONE* by *ONE*:
+
+**!!!  Do not copy the entire thing and try to paste it, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
+
+```
+apt-get update
+apt-get upgrade -y
+apt-get install wget nano unrar unzip libboost-all-dev libevent-dev software-properties-common -y
+add-apt-repository ppa:bitcoin/bitcoin -y
+apt-get update
+apt-get install libdb4.8-dev libdb4.8++-dev -y
+```
