@@ -24,12 +24,11 @@ This is normally run at home, behind firewall, without direct connectivity from 
 ## Requirements
 
 ### Hot Wallet
-* Ubuntu 14.04 or 16.04 running on a VPS such as Vultr, or other server (This will be your Hot wallet) running 24/7
+* Ubuntu 14.04 or 16.04 running on a VPS such as Vultr, or other server running 24/7
 * Static IP Address
-* Port 5500 port forwarded from your router to your Ubuntu server
 * Basic Linux skills
 
 ### Cold Wallet
-* Windows 7 or higher (This will be your Cold wallet)
+* Windows 7 or higher, Mac OS or Linux
 
 ---
