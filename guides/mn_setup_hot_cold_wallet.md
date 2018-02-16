@@ -77,7 +77,7 @@ ufw allow 9020/tcp
 ufw logging on
 ```
 
-If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port 9020/TCP
+If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **9020** from any IP address.
 
 ...
 
@@ -85,4 +85,17 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 
 
 ## **Cold** Wallet Setup(Part 2) using the Qt GUI wallet on Windows, OSX, etc
+
+Requirements:
 * Windows 7 or higher, Mac OS or Linux
+* Outgoing internet access to sync the blockchain and enable the MasterNode remotely
+
+This is the wallet where the MasterNode collateral will have to be transferred and stored. After the setup is complete, this wallet doesn't have to run 24/7 and will be the one receiving the rewards.
+
+#### i.    If you have a previous Rupaya wallet installed, backup the `wallet.dat` and then uninstall it then delete the original data directory for it.
+#### ii.   Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
+#### iii.  The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
+#### iv.   Start the new and ignore the unidentified developer warning.
+#### v.    If you are prompted to Allow Access by the firewall, do so.
+#### vi.   Let the wallet sync until you see this symbol
+![Alt text](https://github.com/rupayatechnologies/Documentation/blob/master/images/rupaya-wallet-sync.png "Wallet Sync Completed")
