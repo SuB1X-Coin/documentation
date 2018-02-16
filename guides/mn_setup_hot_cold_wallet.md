@@ -97,5 +97,5 @@ This is the wallet where the MasterNode collateral will have to be transferred a
 #### iii.  The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
 #### iv.   Start the new and ignore the unidentified developer warning.
 #### v.    If you are prompted to Allow Access by the firewall, do so.
-#### vi.   Let the wallet sync until you see this symbol
+#### vi.   Let the wallet sync until you see this in the bottom right corner of your Wallet
 ![Wallet Sync Completed](images/qt-wallet-synced.png "Wallet Sync Completed")
