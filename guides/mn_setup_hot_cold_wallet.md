@@ -20,20 +20,6 @@ On the other side, the **Cold** wallet (Windows, OSX, Linux) holds the RUPX coll
 
 This is normally run at home, behind firewall, without direct connectivity from the internet, making it a more secure wallet. Once the MasterNode is enabled. The local wallet can then be stopped and MasterNode rewards will still show up on the next wallet start and sync.
 
----
-
-## Requirements
-
-### Hot Wallet
-* Ubuntu 14.04 or 16.04 running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
-* Public IP Address
-* Basic Linux skills
-* 1GB of RAM, 20GB or more disk space
-
-You can get servers like this for $5 a month and can run 2,3 masernode wallets from different coins if the monthly cost is a concern.
-
-### Cold Wallet
-* Windows 7 or higher, Mac OS or Linux
 
 ---
 
@@ -93,3 +79,10 @@ ufw logging on
 
 If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port 9020/TCP
 
+...
+
+---
+
+
+## **Cold** Wallet Setup(Part 2) using the Qt GUI wallet on Windows, OSX, etc
+* Windows 7 or higher, Mac OS or Linux
