@@ -98,4 +98,4 @@ This is the wallet where the MasterNode collateral will have to be transferred a
 #### iv.   Start the new and ignore the unidentified developer warning.
 #### v.    If you are prompted to Allow Access by the firewall, do so.
 #### vi.   Let the wallet sync until you see this symbol
-![Alt text](https://github.com/rupayatechnologies/Documentation/blob/master/images/rupaya-wallet-sync.png "Wallet Sync Completed")
+![Wallet Sync Completed](images/qt-wallet-synced.png "Wallet Sync Completed")
