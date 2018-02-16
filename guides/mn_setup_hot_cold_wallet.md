@@ -45,9 +45,12 @@ This will run 24/7 and provide services to the network via TCP port **9020** for
 ### 1. Get a VPS server from a provider like Vultr, DigitalOcean, Linode, Amazon AWS, etc. 
 
 Requirements:
- * Linux VPS (**Ubuntu 14.04** 64 bit and **Ubuntu 16.04** 64 bit) - Choose the correct version for your OS from the release page
- * Dedicated Public IP Address
- * Recommended at least 1GB of RAM 
+* Ubuntu **14.04** or **16.04** running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
+* Dedicated Public IP Address
+* Recommended at least 1GB of RAM and 20GB of disk space
+* Basic Linux skills
+
+You can get servers like this for $5 a month and can run 2,3 masernode wallets from different coins if the monthly cost is a concern.
 
 
 ### 2. Login via SSH into the server and type the following command in the console as root:
@@ -57,7 +60,7 @@ If you are running a VPS from Vultr or similar, you need to use SSH such as putt
 
 Update and Install new packages by running these commands line by line *ONE* by *ONE*:
 
-**!!!  Do not copy the block and try to paste it, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
+**!!!  Do not copy the block and try to paste, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
 
 ```
 apt-get update
