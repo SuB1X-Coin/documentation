@@ -57,7 +57,7 @@ If you are running a VPS from Vultr or similar, you need to use SSH such as putt
 
 Update and Install new packages by running these commands line by line *ONE* by *ONE*:
 
-**!!!  Do not copy the entire thing and try to paste it, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
+**!!!  Do not copy the block and try to paste it, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
 
 ```
 apt-get update
@@ -67,3 +67,26 @@ add-apt-repository ppa:bitcoin/bitcoin -y
 apt-get update
 apt-get install libdb4.8-dev libdb4.8++-dev -y
 ```
+
+### 3. Configure swap to avoid running out of memory:
+
+```
+fallocate -l 1500M /mnt/1500MB.swap
+dd if=/dev/zero of=/mnt/1500MB.swap bs=1024 count=1572864
+mkswap /mnt/1500MB.swap
+swapon /mnt/1500MB.swap
+chmod 600 /mnt/1500MB.swap
+echo '/mnt/1500MB.swap  none  swap  sw 0  0' >> /etc/fstab
+```
+
+### 4. Allow the MasterNode p2p communication port through the OS firewall:
+
+```
+ufw allow 22/tcp
+ufw limit 22/tcp
+ufw allow 9020/tcp
+ufw logging on
+```
+
+If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port 9020/TCP
+
