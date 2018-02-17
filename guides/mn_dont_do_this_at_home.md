@@ -1,6 +1,6 @@
 ## Why setting up a MasterNode at home is a bad idea
 
-Some people, including me at some point want to save a few bucks and run a MasterNode at home on a retired PC or Laptop collecting dust. Good idea? **NO**
+Some people, including me at some point, want to save a few bucks and run a MasterNode at home on a retired PC or Laptop collecting dust. Good idea? **NO**
 
 Here's why:
 
