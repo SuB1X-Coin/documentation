@@ -85,7 +85,7 @@ If you are already running a `rupayad` on your server and want to upgrade it, st
 ```
 rupaya-cli stop
 ```
-Run the following command until the shekeld process disappears.
+Run the following command until the `rupayad` process disappears.
 ```
 ps aux | grep rupayad | grep -v grep
 ```
@@ -118,6 +118,84 @@ You'll get a start error like `Error: To use rupayad, or the -server option to r
 The service will only start for a second and create the initial data directory(`~/.rupaya/`).
 
 ### 6. Edit the MasterNode main wallet configuration file:
+```
+nano /root/.shekel/shekel.conf
+```
+
+Enter this wallet configuration data and change accordingly:
+```
+rpcuser=<alphanumeric_rpc_username>
+rpcpassword=<alphanumeric_rpc_password>
+rpcport=9021
+rpcallowip=127.0.0.1
+rpcconnect=127.0.0.1
+rpcbind=127.0.0.1
+listen=1
+daemon=1
+masternode=1
+externalip=<ip_address_here>:9020
+masternodeaddr=<ip_address_here>:9020
+masternodeprivkey=TO_BE_REPLACED_IN_NEXT_STEP
+```
+You can right click in SHH (putty) to paste all of the above
+
+Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
+
+This is a real example, based on the `genkey` obtained in the Cold(Part 1) wallet section:
+```
+rpcuser=rupxuser
+rpcpassword=someSUPERsecurePASSWORD3746375620
+rpcport=9021
+rpcallowip=127.0.0.1
+rpcconnect=127.0.0.1
+rpcbind=127.0.0.1
+listen=1
+daemon=1
+masternode=1
+externalip=199.247.10.25:9020
+masternodeaddr=199.247.10.25:9020
+masternodeprivkey=TO_BE_REPLACED_IN_NEXT_STEP
+```
+
+The IP address(`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port(9020) in the Cold Wallet setup(Step 2) as well.
+
+### 7. Start the service and let's obtain the value for `masternodeprivkey`:
+```
+rupayad
+```
+
+Run this command to generate the masternode private key:
+```
+rupaya-cli masternode genkey
+```
+
+Copy to your clipboard the value returned, similar to this:
+```
+87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK
+```
+
+Edit the configuration file again and paste this value for the 
+```
+nano /root/.shekel/shekel.conf
+```
+Based on the example private key from above, I now have this `masternodeprivkey` in the config file. Yours will be different:
+```
+masternodeprivkey=87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK
+```
+
+Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
+
+Start the wallet in the background now:
+```
+rupayad
+```
+
+### 8. Verify that the wallet is synching the blockchain:
+Run this command every few mins until you see the blocks increasing.
+```
+rupays-cli getinfo
+``` 
+We can now go to the next step while this wallet syncs up with the network and gets social with the other MasterNodes.
 
 ---
 
