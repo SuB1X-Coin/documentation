@@ -81,11 +81,6 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 
 ### 5. Install the Rupaya CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
 
-If you are already running a `rupayad` on your server and want to upgrade it, stop the current one and check with grep until the `rupayad` process disappears.
-```
-rupaya-cli stop
-ps aux | grep rupayad | grep -v grep
-```
 
 For **Ubuntu 14.04**
 
@@ -201,6 +196,7 @@ rupays-cli getinfo
 ``` 
 We can now go to the next step while this wallet syncs up with the network and gets social with the other MasterNodes.
 
+
 ---
 
 
@@ -212,7 +208,7 @@ Requirements:
 
 This is the wallet where the MasterNode collateral will have to be transferred and stored. After the setup is complete, this wallet doesn't have to run 24/7 and will be the one receiving the rewards.
 
-### 1. Install and open the Shekel-Qt wallet on your machine.
+### 1. Install and open the Rupaya-Qt wallet on your machine.
 
  * If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
  * Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
@@ -233,13 +229,13 @@ This is the wallet where the MasterNode collateral will have to be transferred a
 Select the row of the newly added address and click **Copy** to store the destination address in the clipboard.
 
 ### 3. Send EXACTLY 10000 RUPX coins to the address you just copied. Double check you've got the correct address before transferring the funds.
-    If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY EXACTLY EXACTLY 10000 RUPX in. This is a common error that will cause the next step to not give you the transaction id needed later on. 
+If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY EXACTLY EXACTLY 10000 RUPX in. This is a common error that will cause the next step to not give you the transaction id needed later on. 
 
-    After sending, you can verify the balance in the Transactions tab. This can take a few minutes to be confirmed by the network.
+After sending, you can verify the balance in the Transactions tab. This can take **a few minutes** to be confirmed by the network. Go get a glass of water. No alcoholic beverages please, we are not out of the woods yet.
 
 ### 4. Open the debug console of the wallet in order to type a few commands. 
 
-   Go to `Tools` -> `Debug console`
+Go to `Tools` -> `Debug console`
 
 ### 5. Run `masternode outputs` command to retrieve the transaction ID of the collateral transfer.
 
@@ -252,3 +248,68 @@ Select the row of the newly added address and click **Copy** to store the destin
       }
    ]
    ```
+
+   Both `txhash` and `outputidx` will be used in the next step. `outputidx` can be `0` or `1`, both are valid values
+   
+### 6. Go to `Tools` -> `Open Masternode Configuration File` and add a line in the newly opened `masternode.conf` file. 
+
+If you get prompted to choose a program, select notepad.exe to open it.
+
+This is an example of what you need in `masternode.conf`. Ignore any example text that may already be in there that contains a '#' in front of each line, that is just an example to help you. Read it if it helps.
+
+This is an example of `masternode.conf`
+```
+mn1 your_vps_ip_address:9020 your_masternode_key_output_from_masternode_genkey txhash_from_masternode_outputs outputidx_from_masternode_outputs
+```
+
+The file will contain an example that is commented out(with a # in front), but based on the above values, I would add this line in:
+```
+MN1 199.247.10.25:9020 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487 1
+```
+>   Where `199.247.10.25` is the external IP of the masternode server that will provide services to the network.
+
+>   Where `87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK` is your masternode key from (Part 1), the value used for `masternodeprivkey` in `/root/.rupaya/rupaya.conf`.
+
+>   Where `c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487` is your txhash from `masternode outputs`.
+
+>   Where `1` is your outputidx from `masternode outputs`.
+      
+### 7. Restart the Qt wallet to pick up the `masternode.conf` changes.
+### 8. Go to Masternodes tab and check if your newly added masternode is listed.
+> If you want to control multiple hot wallets from this cold wallet, you will need to repeat the previous 2-7 steps. The `masternode.conf` file will contain an entry for each masternode that will be added to the network.
+
+At this point, we are going to configure our remote Masternode server.
+
+### 9. Enable the MasterNode
+
+Open `Tools` > `Debug console`.
+
+Type this command to see all the MasterNodes loaded from the `masternode.conf` file with their current status:
+```
+masternode list-conf
+```
+
+You should now see the newly added MasterNode with a status of `MISSING`.
+
+Run the following command, in order to enable it:
+```
+startmasternode alias false MN1
+```
+In this ^ case, the alias of my MasterNode was MN1, in your case, it might be different.
+
+---
+
+## Verify that the MasterNode is enabled and contributing to the network
+
+Switch back to the MasterNode console.
+Give it a few minutes and go to the Linux VPS console and check the status of the masternode with this command:
+```
+rupays-cli masternode status
+```
+
+If you see status `Masternode successfully started`, you've done it, congratulations. Go hug someone now :)
+It will take a few hours until the first rewards start coming in.
+
+You should now be able to see your MasterNode(s) **ENABLED** on this web page: [http://rupx.mn.zone](http://rupx.mn.zone)
+
+Cheers !
