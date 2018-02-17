@@ -132,10 +132,8 @@ rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
 listen=1
 daemon=1
-masternode=1
 externalip=<ip_address_here>:9020
 masternodeaddr=<ip_address_here>:9020
-masternodeprivkey=TO_BE_REPLACED_IN_NEXT_STEP
 ```
 You can right click in SHH (putty) to paste all of the above
 
@@ -151,10 +149,8 @@ rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
 listen=1
 daemon=1
-masternode=1
 externalip=199.247.10.25:9020
 masternodeaddr=199.247.10.25:9020
-masternodeprivkey=TO_BE_REPLACED_IN_NEXT_STEP
 ```
 
 The IP address(`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port(9020) in the Cold Wallet setup(Step 2) as well.
@@ -174,12 +170,20 @@ Copy to your clipboard the value returned, similar to this:
 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK
 ```
 
-Edit the configuration file again and paste this value for the 
+Edit the configuration file again: 
 ```
 nano /root/.rupaya/rupaya.conf
 ```
-Based on the example private key from above, I now have this `masternodeprivkey` in the config file. Yours will be different:
+
+Add these two lines at the end of the file. The second line is taking the value you received from the `rupaya-cli masternode genkey` command:
 ```
+masternode=1
+masternodeprivkey=<your_masternode_genkey_output>
+```
+
+In my case this was:
+```
+masternode=1
 masternodeprivkey=87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK
 ```
 
