@@ -36,7 +36,7 @@ Requirements:
 * Recommended at least 1GB of RAM and 20GB of disk space
 * Basic Linux skills
 
-You can get servers like this for $5 a month and can run 2,3 masernode wallets from different coins if the monthly cost is a concern.
+You can get servers like this for $5 a month and can run 2,3 masternode wallets from different coins if the monthly cost is a concern.
 
 
 ### 2. Login via SSH into the server and type the following command in the console as root:
