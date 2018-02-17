@@ -68,7 +68,7 @@ chmod 600 /mnt/1500MB.swap
 echo '/mnt/1500MB.swap  none  swap  sw 0  0' >> /etc/fstab
 ```
 
-### 4. Allow the MasterNode p2p communication port through the OS firewall:
+### 4. Allow SSH and MasterNode p2p communication port through the OS firewall:
 
 ```
 ufw allow 22/tcp
@@ -79,7 +79,45 @@ ufw logging on
 
 If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **9020** from any IP address.
 
-...
+### 5. Install the Rupaya CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
+
+If you are already running a `rupayad` on your server and want to upgrade it, stop the current one with:
+```
+rupaya-cli stop
+```
+Run the following command until the shekeld process disappears.
+```
+ps aux | grep rupayad | grep -v grep
+```
+
+For **Ubuntu 14.04**
+
+```
+apt-get install libzmq3 libminiupnpc-dev -y
+wget https://github.com/rupaya-project/rupaya/files/1733803/rupaya-4.0.0-ubuntu14.04.zip
+unzip rupaya-4.0.0-ubuntu14.04.zip
+rm rupaya-4.0.0-ubuntu14.04.zip
+mv rupaya-cli rupayad /usr/local/bin/
+rupayad
+```
+
+For **Ubuntu 16.04***
+
+```
+apt-get install libzmq3-dev libminiupnpc-dev -y
+wget https://github.com/rupaya-project/rupaya/files/1733802/rupaya-4.0.0-ubuntu16.04.zip
+unzip rupaya-4.0.0-ubuntu16.04.zip
+rm rupaya-4.0.0-ubuntu16.04.zip
+mv rupaya-cli rupayad /usr/local/bin/
+cd ..
+rupayad
+```
+
+You'll get a start error like `Error: To use rupayad, or the -server option to rupaya-qt, you must set an rpcpassword in the configuration file`. It's expected because we haven't created the config file yet.
+
+The service will only start for a second and create the initial data directory(`~/.rupaya/`).
+
+### 6. Edit the MasterNode main wallet configuration file:
 
 ---
 
