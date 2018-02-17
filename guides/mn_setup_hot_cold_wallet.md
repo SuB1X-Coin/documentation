@@ -57,7 +57,7 @@ apt-get update
 apt-get install libdb4.8-dev libdb4.8++-dev -y
 ```
 
-### 3. Configure swap to avoid running out of memory:
+### 3. Configure swap to avoid running out of memory if you don't have a swap :
 
 ```
 fallocate -l 1500M /mnt/1500MB.swap
@@ -189,8 +189,11 @@ masternodeprivkey=87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK
 
 Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
 
-Start the wallet in the background now:
+
+
+Stop the wallet and wait 2 minutes before attempting a start:
 ```
+rupaya-cli stop && sleep 120
 rupayad
 ```
 
@@ -212,7 +215,7 @@ Requirements:
 
 This is the wallet where the MasterNode collateral will have to be transferred and stored. After the setup is complete, this wallet doesn't have to run 24/7 and will be the one receiving the rewards.
 
-#### i.    If you have a previous Rupaya wallet installed, backup the `wallet.dat` and then uninstall it then delete the original data directory for it.
+#### i.    If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
 #### ii.   Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
 #### iii.  The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
 #### iv.   Start the new and ignore the unidentified developer warning.
