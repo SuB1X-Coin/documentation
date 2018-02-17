@@ -75,6 +75,7 @@ ufw allow 22/tcp
 ufw limit 22/tcp
 ufw allow 9020/tcp
 ufw logging on
+ufw --force enable
 ```
 
 If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **9020** from any IP address.
@@ -101,7 +102,6 @@ wget https://github.com/rupaya-project/rupaya/files/1733802/rupaya-4.0.0-ubuntu1
 unzip rupaya-4.0.0-ubuntu16.04.zip
 rm rupaya-4.0.0-ubuntu16.04.zip
 mv rupaya-cli rupayad /usr/local/bin/
-cd ..
 rupayad
 ```
 
@@ -152,7 +152,7 @@ The IP address(`199.247.10.25` in this example) will be different for you. Use t
 rupayad
 ```
 
-Run this command to generate the masternode private key:
+Wait a few seconds the run this command to generate the masternode private key:
 ```
 rupaya-cli masternode genkey
 ```
