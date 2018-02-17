@@ -212,10 +212,43 @@ Requirements:
 
 This is the wallet where the MasterNode collateral will have to be transferred and stored. After the setup is complete, this wallet doesn't have to run 24/7 and will be the one receiving the rewards.
 
-#### i.    If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
-#### ii.   Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
-#### iii.  The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
-#### iv.   Start the new and ignore the unidentified developer warning.
-#### v.    If you are prompted to Allow Access by the firewall, do so.
-#### vi.   Let the wallet sync until you see this in the bottom right corner of your Wallet
+### 1. Install and open the Shekel-Qt wallet on your machine.
+
+ * If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
+ * Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
+ * The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
+ * Start the new and ignore the unidentified developer warning.
+ * If you are prompted to Allow Access by the firewall, do so.
+ * Let the wallet sync until you see this in the bottom right corner of your Wallet
 ![Wallet Sync Completed](images/qt-wallet-synced.png "Wallet Sync Completed")
+
+### 2. Create a receiving address for the Masternode collateral funds.
+
+   Go to File -> Receiving addresses...
+   
+   Click **New**, type in a label and press **Ok**.
+
+![Create Collateral Address](images/qt-wallet-new-collateral-address.png "Create Collateral Address")
+
+Select the row of the newly added address and click **Copy** to store the destination address in the clipboard.
+
+### 3. Send EXACTLY 10000 RUPX coins to the address you just copied. Double check you've got the correct address before transferring the funds.
+    If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY EXACTLY EXACTLY 10000 RUPX in. This is a common error that will cause the next step to not give you the transaction id needed later on. 
+
+    After sending, you can verify the balance in the Transactions tab. This can take a few minutes to be confirmed by the network.
+
+### 4. Open the debug console of the wallet in order to type a few commands. 
+
+   Go to `Tools` -> `Debug console`
+
+### 5. Run `masternode outputs` command to retrieve the transaction ID of the collateral transfer.
+
+   You should see an output that looks like this:
+   ```
+   [
+      {
+        "txhash" : "c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487",
+        "outputidx" : 1
+      }
+   ]
+   ```
