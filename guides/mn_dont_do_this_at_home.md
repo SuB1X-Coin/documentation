@@ -12,7 +12,7 @@ Here's why:
 
 * Running old PCs and Laptops at home also costs energy, creates noise and they can be a fire risk when running 24/7.
 
-* Your IP Address can be traced back to your home, therefore it is unsafe.
+* Your IP address can be traced back to your home, therefore it is unsafe.
 
 
 **Recommendation:** Get a $5 a month Linux VPS server and host up to four MasterNode from different coins.
