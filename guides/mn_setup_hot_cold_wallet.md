@@ -81,12 +81,9 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 
 ### 5. Install the Rupaya CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
 
-If you are already running a `rupayad` on your server and want to upgrade it, stop the current one with:
+If you are already running a `rupayad` on your server and want to upgrade it, stop the current one and check with grep until the `rupayad` process disappears.
 ```
 rupaya-cli stop
-```
-Run the following command until the `rupayad` process disappears.
-```
 ps aux | grep rupayad | grep -v grep
 ```
 
