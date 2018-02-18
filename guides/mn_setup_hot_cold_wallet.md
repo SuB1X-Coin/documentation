@@ -152,7 +152,7 @@ The IP address(`199.247.10.25` in this example) will be different for you. Use t
 rupayad
 ```
 
-Wait a few seconds the run this command to generate the masternode private key:
+Wait a few seconds then run this command to generate the masternode private key:
 ```
 rupaya-cli masternode genkey
 ```
@@ -213,7 +213,7 @@ This is the wallet where the MasterNode collateral will have to be transferred a
  * If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
  * Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
  * The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
- * Start the new and ignore the unidentified developer warning.
+ * Start the wallet software and ignore the unidentified developer warning.
  * If you are prompted to Allow Access by the firewall, do so.
  * Let the wallet sync until you see this in the bottom right corner of your Wallet
 ![Wallet Sync Completed](images/qt-wallet-synced.png "Wallet Sync Completed")
