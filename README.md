@@ -3,7 +3,7 @@
 Here are the currently available guides:
 
 ### Setup MasterNode
- * [MasterNode Cold (Linux) + Hot Qt Wallet Setup Guide](guides/MasterNode_Setup_Cold_Hot_Linux.md)
+ * [MasterNode Cold (Linux) + Hot Qt Wallet Setup Guide](guides/mn_setup_hot_cold_wallet.md)
 
 ----
 
