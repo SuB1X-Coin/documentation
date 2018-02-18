@@ -192,7 +192,7 @@ rupayad
 ### 8. Verify that the wallet is synching the blockchain:
 Run this command every few mins until you see the blocks increasing.
 ```
-rupays-cli getinfo
+rupaya-cli getinfo
 ``` 
 We can now go to the next step while this wallet syncs up with the network and gets social with the other MasterNodes.
 
