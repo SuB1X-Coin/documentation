@@ -280,8 +280,6 @@ Where `1` is your outputidx from `masternode outputs`.
 
 If you want to control multiple hot wallets from this cold wallet, you will need to repeat the previous 2-7 steps. The `masternode.conf` file will contain an entry for each masternode that will be added to the network.
 
-At this point, we are going to configure our remote Masternode server.
-
 ### 9. Enable the MasterNode
 
 Open `Tools` > `Debug console`.
