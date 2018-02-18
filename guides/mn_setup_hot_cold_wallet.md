@@ -127,11 +127,11 @@ daemon=1
 externalip=<ip_address_here>:9020
 masternodeaddr=<ip_address_here>:9020
 ```
-You can right click in SHH (putty) to paste all of the above
+You can right click in SSH (putty) to paste all of the above
 
 Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
 
-This is a real example, based on the `genkey` obtained in the Cold(Part 1) wallet section:
+This is a real example:
 ```
 rpcuser=rupxuser
 rpcpassword=someSUPERsecurePASSWORD3746375620
