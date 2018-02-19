@@ -207,7 +207,7 @@ This is the wallet where the MasterNode collateral will have to be transferred a
  * Start the wallet software and ignore the unidentified developer warning.
  * If you are prompted to Allow Access by the firewall, do so.
  * Let the wallet sync until you see this in the bottom right corner of your Wallet
-![Wallet Sync Completed](images/qt-wallet-synced.png "Wallet Sync Completed")
+![Wallet Sync Completed](images/qt-wallet-sync.png "Wallet Sync Completed")
 
 ### 2. Create a receiving address for the Masternode collateral funds.
 
