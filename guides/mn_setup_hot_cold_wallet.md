@@ -295,7 +295,7 @@ In this ^ case, the alias of my MasterNode was MN1, in your case, it might be di
 Switch back to the MasterNode console.
 Give it a few minutes and go to the Linux VPS console and check the status of the masternode with this command:
 ```
-rupays-cli masternode status
+rupaya-cli masternode status
 ```
 
 If you see status `Masternode successfully started`, you've done it, congratulations. Go hug someone now :)
