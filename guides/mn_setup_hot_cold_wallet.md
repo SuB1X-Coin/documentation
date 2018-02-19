@@ -116,7 +116,7 @@ Enter this wallet configuration data and change accordingly:
 ```
 rpcuser=<alphanumeric_rpc_username>
 rpcpassword=<alphanumeric_rpc_password>
-rpcport=9021
+rpcport=7020
 rpcallowip=127.0.0.1
 rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
@@ -133,7 +133,7 @@ This is a real example:
 ```
 rpcuser=rupxuser
 rpcpassword=someSUPERsecurePASSWORD3746375620
-rpcport=9021
+rpcport=7020
 rpcallowip=127.0.0.1
 rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
