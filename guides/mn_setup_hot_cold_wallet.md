@@ -288,6 +288,8 @@ startmasternode alias false MN1
 ```
 In this ^ case, the alias of my MasterNode was MN1, in your case, it might be different.
 
+Alternatively, if the `startmasternode` command is not working, you can go to the **Masternodes** tab of the wallet, click on the node you want to activate and then click **Start alias**
+
 ---
 
 ## Verify that the MasterNode is enabled and contributing to the network
