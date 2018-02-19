@@ -44,16 +44,14 @@ You can get servers like this for $5 a month and can run 3,4 MasterNode wallets 
 If you are using Windows, [PuTTY](https://putty.org) is a very good SSH client that you can use to connect to a remote Linux server.
 If you are running a VPS from Vultr or similar, you need to use SSH such as putty if you want to copy and paste these commands otherwise you will have to type them all out!
 
-Update and Install new packages by running these commands line by line *ONE* by *ONE*:
-
-**!!!  Do not copy the block and try to paste, it will not work! Type or paste only one line at a time and hit enter after each line !!!**
+Update and Install new packages by running the following commands in one go, one copy-paste:
 
 ```
-apt-get update
-apt-get upgrade -y
-apt-get install wget nano unrar unzip libboost-all-dev libevent-dev software-properties-common -y
-add-apt-repository ppa:bitcoin/bitcoin -y
-apt-get update
+apt-get update && \
+apt-get upgrade -y && \
+apt-get install wget nano unrar unzip libboost-all-dev libevent-dev software-properties-common -y && \
+add-apt-repository ppa:bitcoin/bitcoin -y && \
+apt-get update && \
 apt-get install libdb4.8-dev libdb4.8++-dev -y
 ```
 
