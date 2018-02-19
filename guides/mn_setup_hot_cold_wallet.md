@@ -94,14 +94,7 @@ rupayad
 
 For **Ubuntu 16.04***
 
-```
-apt-get install libzmq3-dev libminiupnpc-dev -y
-wget https://github.com/rupaya-project/rupaya/files/1733802/rupaya-4.0.0-ubuntu16.04.zip
-unzip rupaya-4.0.0-ubuntu16.04.zip
-rm rupaya-4.0.0-ubuntu16.04.zip
-mv rupaya-cli rupayad /usr/local/bin/
-rupayad
-```
+**COMING SOON**
 
 You'll get a start error like `Error: To use rupayad, or the -server option to rupaya-qt, you must set an rpcpassword in the configuration file`. It's expected because we haven't created the config file yet.
 
