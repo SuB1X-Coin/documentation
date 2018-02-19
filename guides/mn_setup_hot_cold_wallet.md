@@ -85,7 +85,7 @@ For **Ubuntu 14.04**
 
 ```
 apt-get install libzmq3 libminiupnpc-dev -y
-wget https://github.com/rupaya-project/rupaya/files/1734792/rupaya-4.0.0-ubuntu14.04.zip
+wget https://github.com/rupaya-project/rupaya/releases/download/v4.0.0.0/rupaya-4.0.0-ubuntu14.04.zip
 unzip rupaya-4.0.0-ubuntu14.04.zip
 rm rupaya-4.0.0-ubuntu14.04.zip
 mv rupaya-cli rupayad /usr/local/bin/
