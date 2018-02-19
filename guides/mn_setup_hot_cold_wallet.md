@@ -31,7 +31,7 @@ This will run 24/7 and provide services to the network via TCP port **9020** for
 ### 1. Get a VPS server from a provider like Vultr, DigitalOcean, Linode, Amazon AWS, etc. 
 
 Requirements:
-* Ubuntu **14.04** or **16.04** running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
+* Ubuntu **14.04** or **16.04**(SOON) running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
 * Dedicated Public IP Address
 * Recommended at least 1GB of RAM and 20GB of disk space
 * Basic Linux skills
