@@ -118,8 +118,8 @@ rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
 listen=1
 daemon=1
-externalip=<ip_address_here>:9020
-masternodeaddr=<ip_address_here>:9020
+externalip=<public_mn_ip_address_here>:9020
+masternodeaddr=<public_mn_ip_address_here>:9020
 ```
 You can right click in SSH (putty) to paste all of the above
 
@@ -139,7 +139,7 @@ externalip=199.247.10.25:9020
 masternodeaddr=199.247.10.25:9020
 ```
 
-The IP address(`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port(9020) in the Cold Wallet setup(Step 2) as well.
+The IP address (`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port (9020) in the Cold Wallet setup(Step 2) as well.
 
 ### 7. Start the service and let's obtain the value for `masternodeprivkey`:
 ```
@@ -248,16 +248,15 @@ Go to `Tools` -> `Debug console`
    
 ### 6. Go to `Tools` -> `Open Masternode Configuration File` and add a line in the newly opened `masternode.conf` file. 
 
-If you get prompted to choose a program, select notepad.exe to open it.
+If you get prompted to choose a program, select a text editor like Notepad/TextEdit to open it.
 
-This is an example of what you need in `masternode.conf`. Ignore any example text that may already be in there that contains a '#' in front of each line, that is just an example to help you. Read it if it helps.
+These are the default directories for the data directory where this file is stored:
+ * Mac: `~/Library/Application Support/Rupaya`
+ * Windows: `~\AppData\Roaming\Rupaya`
 
-This is an example of `masternode.conf`
-```
-mn1 your_vps_ip_address:9020 your_masternode_key_output_from_masternode_genkey txhash_from_masternode_outputs outputidx_from_masternode_outputs
-```
+This is an example of what you need in `masternode.conf`.
 
-The file will contain an example that is commented out(with a # in front), but based on the above values, I would add this line in:
+The file will contain an example that is commented out(with a # in front). Read it if it helps. Based on the above values, I would add this line in:
 ```
 MN1 199.247.10.25:9020 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487 1
 ```
