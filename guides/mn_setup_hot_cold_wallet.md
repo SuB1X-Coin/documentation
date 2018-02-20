@@ -224,6 +224,7 @@ Select the row of the newly added address and click **Copy** to store the destin
 
 ### 3. Send EXACTLY 10000 RUPX coins to the address you just copied. Double check you've got the correct address before transferring the funds.
 If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY EXACTLY EXACTLY 10000 RUPX in. This is a common error that will cause the next step to not give you the transaction id needed later on. 
+For example, to withdraw from `Stocks.Exchange` the exact ammount for a MasterNode, you need to specify the ammount of **10000.001** to account for the fee.
 
 After sending, you can verify the balance in the Transactions tab. This can take **a few minutes** to be confirmed by the network. Go get a glass of water. No alcoholic beverages please, we are not out of the woods yet.
 
