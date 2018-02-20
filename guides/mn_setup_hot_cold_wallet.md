@@ -23,6 +23,7 @@ This is normally run at home, behind firewall, without direct connectivity from 
 
 ---
 
+We are going to setup the Hot wallet first. This will reduce the overall time as the Hot wallet will sync the blockchain while we setup the Cold wallet. It also requires less back-and-forth between the two.
 
 ## **Hot** MasterNode VPS Setup(Part 1) with Linux CLI only wallet
 
