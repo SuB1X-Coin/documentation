@@ -34,7 +34,7 @@ This will run 24/7 and provide services to the network via TCP port **9020** for
 ### 1. Get a VPS server from a provider like Vultr, DigitalOcean, Linode, Amazon AWS, etc. 
 
 Requirements:
-* Ubuntu **14.04** or **16.04**(SOON) running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
+* Linux 64 bit, (e.g. Ubuntu **16.04**) running on a server in the cloud 24/7. e.g: VPS such as Vultr, Amazon EC2 instance, Azure instance
 * Dedicated Public IP Address
 * Recommended at least 1GB of RAM and 20GB of disk space
 * Basic Linux skills
@@ -47,26 +47,15 @@ You can get servers like this for $5 a month and can run 3,4 MasterNode wallets 
 If you are using Windows, [PuTTY](https://putty.org) is a very good SSH client that you can use to connect to a remote Linux server.
 If you are running a VPS from Vultr or similar, you need to use SSH such as putty if you want to copy and paste these commands otherwise you will have to type them all out!
 
-Update and Install new packages by running the following commands in one go, one copy-paste:
-
-```
-apt-get update && \
-apt-get upgrade -y && \
-apt-get install wget nano unrar unzip libboost-all-dev libevent-dev software-properties-common -y && \
-add-apt-repository ppa:bitcoin/bitcoin -y && \
-apt-get update && \
-apt-get install libdb4.8-dev libdb4.8++-dev -y
-```
-
 ### 3. Configure swap to avoid running out of memory if you don't have a swap :
 
 ```
-fallocate -l 1500M /mnt/1500MB.swap
-dd if=/dev/zero of=/mnt/1500MB.swap bs=1024 count=1572864
-mkswap /mnt/1500MB.swap
-swapon /mnt/1500MB.swap
-chmod 600 /mnt/1500MB.swap
-echo '/mnt/1500MB.swap  none  swap  sw 0  0' >> /etc/fstab
+fallocate -l 3000M /mnt/3000MB.swap
+dd if=/dev/zero of=/mnt/3000MB.swap bs=1024 count=3072000
+mkswap /mnt/3000MB.swap
+swapon /mnt/3000MB.swap
+chmod 600 /mnt/3000MB.swap
+echo '/mnt/3000MB.swap  none  swap  sw 0  0' >> /etc/fstab
 ```
 
 ### 4. Allow SSH and MasterNode p2p communication port through the OS firewall:
@@ -84,20 +73,13 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 ### 5. Install the Rupaya CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
 
 
-For **Ubuntu 14.04**
+Download and unpack the Rupaya wallet binaries by running the following commands:
 
 ```
-apt-get install libzmq3 libminiupnpc-dev -y
-wget https://github.com/rupaya-project/rupaya/releases/download/v4.0.0.0/rupaya-4.0.0-ubuntu14.04.zip
-unzip rupaya-4.0.0-ubuntu14.04.zip
-rm rupaya-4.0.0-ubuntu14.04.zip
-mv rupaya-cli rupayad /usr/local/bin/
+wget https://github.com/rupaya-project/rupaya/releases/download/v4.0.0.0/rupaya-4.0.0-x86_64-linux.tar.gz
+tar -xzvf rupaya-4.0.0-x86_64-linux.tar.gz -C /usr/local/bin/
 rupayad
 ```
-
-For **Ubuntu 16.04***
-
-**COMING SOON**
 
 You'll get a start error like `Error: To use rupayad, or the -server option to rupaya-qt, you must set an rpcpassword in the configuration file`. It's expected because we haven't created the config file yet.
 
