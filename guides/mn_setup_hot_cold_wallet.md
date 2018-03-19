@@ -288,6 +288,6 @@ rupaya-cli masternode status
 If you see status `Masternode successfully started`, you've done it, congratulations. Go hug someone now :)
 It will take a few hours until the first rewards start coming in.
 
-You should now be able to see your MasterNode(s) **ENABLED** on this web page: [http://rupx.mn.zone](http://rupx.mn.zone)
+You should now be able to see your MasterNode(s) **ENABLED** on this web page: [http://mn.rupx.io](http://mn.rupx.io)
 
 Cheers !
