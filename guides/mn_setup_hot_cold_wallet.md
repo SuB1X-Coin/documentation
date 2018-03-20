@@ -243,6 +243,8 @@ The file will contain an example that is commented out(with a # in front). Read 
 MN1 199.247.10.25:9020 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487 1
 ```
 
+Where `MN1` is the node's alias.
+
 Where `199.247.10.25` is the external IP of the masternode server that will provide services to the network.
 
 Where `87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK` is your masternode key from (Part 1), the value used for `masternodeprivkey` in `/root/.rupaya/rupaya.conf`.
