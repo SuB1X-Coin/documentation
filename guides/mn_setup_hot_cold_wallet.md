@@ -285,6 +285,8 @@ Give it a few minutes and go to the Linux VPS console and check the status of th
 rupaya-cli masternode status
 ```
 
+If you see status `Not capable masternode: Hot node, waiting for remote activation`, you need to wait a bit longer for the blockchain to reach consensus. It's not uncommon to take 30 minutes before activation can be done.
+
 If you see status `Masternode successfully started`, you've done it, congratulations. Go hug someone now :)
 It will take a few hours until the first rewards start coming in.
 
