@@ -6,8 +6,7 @@
 
 
 > It's very common in this industry for scammers to offer "help" via remote screen sharing(TeamViewer, Skype, Zoom, WebEx, etc).
-They will use nicknames like `Masternode Helper`, `Masternode Support`, `Cryptopia Support` and will seem very nice and helpful to you.
-Majority of these users will run a command like `dumpprivkey`, `sendtoaddress` and your funds will be gone, adios, sayonara.
+They will use nicknames like `Masternode Helper`, `Masternode Support`, `Cryptopia Support` and will be very nice and helpful to you. At least until they manage to run a command like `dumpprivkey`, `sendtoaddress` and your funds will be gone, adios, sayonara.
 Please be aware and stay safe!
 
 **!!! This guide is for setting up a new MasterNode using the new (dark theme) Rupaya v4 wallet and chain !!!**
