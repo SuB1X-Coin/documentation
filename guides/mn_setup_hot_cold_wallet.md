@@ -4,6 +4,12 @@
 
 > The guide takes the time to explain not just _How_ but also _Why_ we do certain things. By using Linux for the hot wallet you'll have the opportunity to expand your knowledge into the open source, highly available and performat operating system that powers the Internet. I'll close this though with a quote by Benjamin Franklin: "An investment in knowledge pays the best interest"
 
+
+> It's very common in this industry for scammers to offer "help" via remote screen sharing(TeamViewer, Skype, Zoom, WebEx, etc).
+They will use nicknames like `Masternode Helper`, `Masternode Support`, `Cryptopia Support` and will seem very nice and helpful to you.
+Majority of these users will run a command like `dumpprivkey`, `sendtoaddress` and your funds will be gone, adios, sayonara.
+Please be aware and stay safe!
+
 **!!! This guide is for setting up a new MasterNode using the new (dark theme) Rupaya v4 wallet and chain !!!**
 
 ---
