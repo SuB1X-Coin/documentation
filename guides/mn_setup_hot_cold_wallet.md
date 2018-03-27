@@ -108,6 +108,7 @@ listen=1
 daemon=1
 externalip=<public_mn_ip_address_here>:9020
 masternodeaddr=<public_mn_ip_address_here>:9020
+addnode=rupx.seeds.mn.zone
 ```
 You can right click in SSH (putty) to paste all of the above
 
@@ -126,6 +127,7 @@ listen=1
 daemon=1
 externalip=199.247.10.25:9020
 masternodeaddr=199.247.10.25:9020
+addnode=rupx.seeds.mn.zone
 ```
 
 The IP address (`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port (9020) in the Cold Wallet setup(Step 2) as well.
@@ -200,6 +202,11 @@ This is the wallet where the MasterNode collateral will have to be transferred a
  * If you are prompted to Allow Access by the firewall, do so.
  * Let the wallet sync until you see this in the bottom right corner of your Wallet
 ![Wallet Sync Completed](images/qt-wallet-sync.png "Wallet Sync Completed")
+ * If the wallet is not synching, add this line in the configuration file:
+```
+addnode=rupx.seeds.mn.zone
+```
+The Qt wallet will open the configuration from `Tools` > `Open Wallet Configuration File`. Restart the wallet every time you update the configuration.
 
 ### 2. Create a receiving address for the Masternode collateral funds.
 
