@@ -12,14 +12,14 @@ Depending on the type of wallet you are running, here are a few ways to check th
 * For Windows GUI wallet, select from the top menu: `Help` -> `About Rupaya Core`
 * For OSX GUI wallet, select from the top menu: `Rupaya Core` -> `About Rupaya Core`
 
-If you see `Rupaya Core version v4.0.0.0 ...`, you are running version 4.0.0.0 of the Rupaya wallet
+If you see `Rupaya Core version v4.0.0.0 ...`, you are running version `4.0.0.0` of the Rupaya wallet
 
 For Linux CLI wallets, you can check the wallet version with this command from the shell:
 ```
 rupaya-cli getnetworkinfo | grep subversion
 ```
 
-You will see `"subversion" : "/Rupaya Core:4.0.0/"` when you are running version 4.0.0.0 of the Rupaya wallet
+You will see `"subversion" : "/Rupaya Core:4.0.0/"` when you are running version `4.0.0.0` of the Rupaya wallet
 
 
 ## Check for new wallet version releases
@@ -61,7 +61,7 @@ rupaya-cli getnetworkinfo | grep subversion
 ```
 rupaya-cli stop
 ```
-Run the following command until the rupayad process disappears. It usually takes around a minute for the process to dissapear.
+Run the following command until the `rupayad` process disappears. It usually takes around a minute for the process to this to happen.
 ```
 ps aux | grep rupayad | grep -v grep
 ```
@@ -101,3 +101,5 @@ For Windows or OSX GUI wallets you can find this information from the top menu: 
  * `Current number of blocks`
  * `Number of connections (out)`
 
+
+:rocket:
