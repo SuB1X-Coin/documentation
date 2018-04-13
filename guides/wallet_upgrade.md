@@ -101,5 +101,4 @@ For Windows or OSX GUI wallets you can find this information from the top menu: 
  * `Current number of blocks`
  * `Number of connections (out)`
 
-
-:rocket:
+Thank you for upgrading and helping this chain move forward :rocket:
