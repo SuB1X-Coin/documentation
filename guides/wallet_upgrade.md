@@ -1,8 +1,7 @@
 # Rupaya wallet upgrade guide
 
 It is recommended that you upgrade your wallets (local or MasterNode ones) as soon as a new version is released.
-This ensures that the consensus across the decentralized network and improvements. These are crucial for the success of the project.
-Wallet upgrade will not cause MasterNode rewards being lost or delayed. On the opposite, not upgraded wallets will be banned by the other nodes in the network at certain block thresholds. This will eliminate the node from the network and cause lost rewards and ban expire delays.
+This ensures that the consensus across the decentralized network and improvements. These are crucial for the success of the project. Non upgraded wallets will be banned by the other nodes in the network at certain block thresholds. This will eliminate the node from the network and cause lost rewards and ban expire delays.
 
 
 ## Check existing wallet version
@@ -12,14 +11,14 @@ Depending on the type of wallet you are running, here are a few ways to check th
 * For Windows GUI wallet, select from the top menu: `Help` -> `About Rupaya Core`
 * For OSX GUI wallet, select from the top menu: `Rupaya Core` -> `About Rupaya Core`
 
-If you see `Rupaya Core version v4.0.0.0 ...`, you are running version `4.0.0.0` of the Rupaya wallet
+If you see `Rupaya Core version v4.0.0 ...`, you are running version `4.0.0` of the Rupaya wallet
 
 For Linux CLI wallets, you can check the wallet version with this command from the shell:
 ```
 rupaya-cli getnetworkinfo | grep subversion
 ```
 
-You will see `"subversion" : "/Rupaya Core:4.0.0/"` when you are running version `4.0.0.0` of the Rupaya wallet
+You will see `"subversion" : "/Rupaya Core:4.0.0/"` when you are running version `4.0.0` of the Rupaya wallet
 
 
 ## Check for new wallet version releases
@@ -102,5 +101,15 @@ For Windows or OSX GUI wallets you can find this information from the top menu: 
  * `Client version`
  * `Current number of blocks`
  * `Number of connections (out)`
+
+## If you are running a MasterNode
+
+Verify the status of the masternode with `rupaya-cli masternode status` from the CLI or `masternode status` from a GUI masternode.
+You should see `"message" : "Masternode successfully started"`
+
+If you get `"message" : "Not capable masternode: Hot node, waiting for remote activation."`, go the the upgraded Cold wallet and START the masternode again.
+
+You might need to wait around 20 minutes before the masternode reports `Masternode successfully started`.
+After this, check the masternode on `http://mn.rupx.io`. If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
 
 Thank you for upgrading and helping this chain move forward :rocket:
