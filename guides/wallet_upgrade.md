@@ -42,22 +42,26 @@ where `~` represents the home directory of the login user.
 
 [Download](https://github.com/rupaya-project/rupaya/releases) the archive with the new wallet. We are not covering compiling from sources in this guide to keep it short and sweet.
 
-For Windows and OSX, after you stop the wallet, just replace the old executable with the new one. Start it back and verify that the version of the wallet changed.
+### Windows and OSX GUI wallets
 
-Here are the steps needed to upgrade the wallet:
+For Windows and OSX, after you stop the wallet, just replace the old `qt` executable with the new one. Start it back and verify that the version of the wallet changed.
 
-### 1. Login via SSH into the server and type the following command in the console as root:
+### For Linux CLI wallet
+
+Here are the steps needed to upgrade the wallet normally used by Linux MasterNodes 
+
+#### 1. Login via SSH into the server and type the following command in the console as root:
 
 If you are using Windows, [PuTTY](https://putty.org) is a very good SSH client that you can use to connect to a remote Linux server.
 
 Best to run these commands as user root to avoid having to deal with filesystem permissions.
 
-### 2. Check the current wallet version:
+#### 2. Check the current wallet version:
 ```
 rupaya-cli getnetworkinfo | grep subversion
 ```
 
-### 3. Stop the wallet service with:
+#### 3. Stop the wallet service with:
 ```
 rupaya-cli stop
 ```
@@ -66,20 +70,20 @@ Run the following command until the `rupayad` process disappears. It usually tak
 ps aux | grep rupayad | grep -v grep
 ```
 
-### 4. Download the new wallet and unpack it:
+#### 4. Download the new wallet and unpack it:
 ```
 cd /tmp
 wget https://github.com/rupaya-project/rupaya/releases/download/v4.0.0.0/rupaya-4.0.0-x86_64-linux.tar.gz
 tar -xzvf rupaya-4.1.0-x86_64-linux.tar.gz -C /usr/local/bin/
 ```
 
-### 5. Start the service:
+#### 5. Start the service:
 ```
 rupayad
 ```
 It will take 10 seconds or so before we can call it with the cli command.
 
-### 6. Use the cli command to check the wallet version:
+#### 6. Use the cli command to check the wallet version:
 ```
 rupaya-cli getnetworkinfo | grep subversion
 ```
