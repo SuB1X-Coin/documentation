@@ -46,7 +46,7 @@ where `~` represents the home directory of the login user.
 
 For Windows and OSX, after you stop the wallet, just replace the old `qt` executable with the new one. Start it back and verify that the version of the wallet changed.
 
-### For Linux CLI wallet
+### Linux CLI wallet
 
 Here are the steps needed to upgrade the wallet normally used by Linux MasterNodes 
 
