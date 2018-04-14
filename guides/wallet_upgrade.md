@@ -73,7 +73,7 @@ ps aux | grep rupayad | grep -v grep
 #### 4. Download the new wallet and unpack it:
 ```
 cd /tmp
-wget https://github.com/rupaya-project/rupaya/releases/download/v4.0.0.0/rupaya-4.0.0-x86_64-linux.tar.gz
+wget https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz
 tar -xzvf rupaya-4.1.0-x86_64-linux.tar.gz -C /usr/local/bin/
 ```
 
