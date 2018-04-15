@@ -71,7 +71,7 @@ ps aux | grep rupayad | grep -v grep
 
 #### 4. Download the new wallet and unpack it:
 
-This command uses a github short url to download [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
+This command uses a short github url to download [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
 ```
 sudo wget -qO- https://git.io/vpeSF | tar xvz -C /usr/local/bin/
 ```
