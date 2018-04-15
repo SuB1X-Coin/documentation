@@ -70,8 +70,10 @@ ps aux | grep rupayad | grep -v grep
 ```
 
 #### 4. Download the new wallet and unpack it in the PATH:
+
+This command will download and extract the binaries in the PATH. Make sure you copy the entire command as it's scrolls out a bit: 
 ```
-wget -qO- https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz | tar xvz -C /usr/local/bin/
+sudo wget -qO- https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz | tar xvz -C /usr/local/bin/
 ```
 
 #### 5. Start the service:
@@ -108,6 +110,8 @@ Verify the status of the masternode with `rupaya-cli masternode status` from the
 You should see `"message" : "Masternode successfully started"`
 
 If you get `"message" : "Not capable masternode: Hot node, waiting for remote activation."`, go the the upgraded Cold wallet and START the masternode again.
+
+Wait a minute and then go to the MasterNode server, stop the wallet and start it again. Check the masternode status now.
 
 You might need to wait around 20 minutes before the masternode reports `Masternode successfully started`.
 After this, check the masternode on `http://mn.rupx.io`. If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
