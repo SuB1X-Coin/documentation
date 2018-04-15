@@ -69,11 +69,11 @@ Run the following command until the `rupayad` process disappears. It usually tak
 ps aux | grep rupayad | grep -v grep
 ```
 
-#### 4. Download the new wallet and unpack it in the PATH:
+#### 4. Download the new wallet and unpack it:
 
-This command will download and extract the binaries in the PATH. Make sure you copy the entire command as it's scrolls out a bit: 
+This command will download and extract the [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) binaries in the PATH.
 ```
-sudo wget -qO- https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz | tar xvz -C /usr/local/bin/
+sudo wget -qO- https://git.io/vpeSF | tar xvz -C /usr/local/bin/
 ```
 
 #### 5. Start the service:
