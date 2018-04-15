@@ -80,9 +80,10 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 
 Download and unpack the Rupaya wallet binaries by running the following commands:
 
+This command uses a short github url to download [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
+
 ```
-wget https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz
-tar -xzvf rupaya-4.1.0-x86_64-linux.tar.gz -C /usr/local/bin/
+sudo wget -qO- https://git.io/vpeSF | tar xvz -C /usr/local/bin/
 rupayad
 ```
 
