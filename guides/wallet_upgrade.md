@@ -109,7 +109,7 @@ For Windows or OSX GUI wallets you can find this information from the top menu: 
 Verify the status of the masternode with `rupaya-cli masternode status` from the CLI or `masternode status` from a GUI masternode.
 You should see `"message" : "Masternode successfully started"`
 
-If you get `"message" : "Not capable masternode: Hot node, waiting for remote activation."`, go the the upgraded Cold wallet and START the masternode again.
+If you get `"message" : "Not capable masternode: Hot node, waiting for remote activation."`, go the the upgraded Cold wallet and START the masternode again (i.e. `startmasternode alias false MN1`)
 
 Wait a minute and then go to the MasterNode server, stop the wallet and start it again. Check the masternode status now.
 
