@@ -1,6 +1,6 @@
 ## Rupaya Governance powered by the blockchain
 
-The Rupaya Community Governance will allow anyone with a Rupaya wallet to submit project proposals for new exchanges, marketing, dev, integrations, etc and get the requested RUPX coins if MasterNode owners vote it **Yes**
+The Rupaya Community Governance will allow anyone with a Rupaya wallet to submit project proposals for integrations, promoting, new exchanges, marketing, dev, etc and get the requested RUPX coins if MasterNode owners support it with **Yes** votes.
 
 ### Create a proposal
 
