@@ -19,11 +19,19 @@ $ rupaya-cli getaccountaddress "proposal1"
 yKdGJkWJm4fXTrRmpvrXjpL4r8eMnnBeLd
 ```
 
-### Create the proposal using the superblock and address from above. In this example we are asking for 2000 RUPX coins. Min amount that can be requested is `10`. Value `1` after the URL indicates that this is a one-off proposal, targeted to be paid on block 129600 if masternode owners support it.
-### The URL is there to provide additional details about the proposal so that MN owners can decide if they should vote it yes or no
+### Create the proposal using the superblock and address from above. 
+
+In this example we are asking for 2000 RUPX coins. Min amount that can be requested is `10`. Value `1` after the URL indicates that this is a one-off proposal, targeted to be paid on block 129600 if masternode owners support it.
+The URL is there to provide additional details about the proposal so that MN owners can decide if they should vote it yes or no.
+Proposal name is limited at 20 characters and URL at 64.
 ```
 $ rupaya-cli preparebudget "test1" "http://example.com/proposal1" 1 129600 "yKdGJkWJm4fXTrRmpvrXjpL4r8eMnnBeLd" 2000
 2e21cae5c69209d648734653e3dcca85c67ac96e08a48d99923de58e9ba222d3
+```
+
+Use the help subcommand if you want more details about each parameter:
+```
+rupaya-cli help preparebudget
 ```
 
 ### Wait for the 50 RUPX proposal fee transaction to gain 6 confirmations
