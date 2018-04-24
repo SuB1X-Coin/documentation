@@ -4,7 +4,9 @@ The Rupaya Community Governance will allow anyone with a Rupaya wallet to submit
 
 ### Create a proposal
 
-All the commands assume a CLI wallet. You can run them in the debug console of a Qt wallet as well, just remove the `$ rupaya-cli ` part from the commands.
+All the commands assume a CLI wallet.
+
+You can run them in the debug console of a Qt wallet as well, just remove the `$ rupaya-cli ` part from the commands.
 
 ### Identify the next budget superblock to pin the proposal to
 
