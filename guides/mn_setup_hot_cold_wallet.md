@@ -1,40 +1,40 @@
-# Rupaya Hot + Cold wallet MasterNode setup guide
+# SUB1X Hot + Cold wallet MasterNode setup guide
 
 > This is a community contributed guide. Feel free to suggest improvements via Issues or opening Pull Requests. Thank you!
 
-> The guide takes the time to explain not just _How_ but also _Why_ we do certain things. By using Linux for the hot wallet you'll have the opportunity to expand your knowledge into the open source, highly available and performat operating system that powers the Internet. I'll close this though with a quote by Benjamin Franklin: "An investment in knowledge pays the best interest"
+> The guide takes the time to explain not just _How_ but also _Why_ we do certain things. By using Linux for the hot wallet you'll have the opportunity to expand your knowledge from the open source, highly available and performat operating system that powers the Internet. I'll close this though with a quote by Benjamin Franklin: "An investment in knowledge pays the best interest"
 
 
 > It's very common in this industry for scammers to offer "help" via remote screen sharing(TeamViewer, Skype, Zoom, WebEx, etc).
-They will use nicknames like `Masternode Helper`, `Masternode Support`, `Cryptopia Support` and will be very nice and helpful to you. At least until they manage to run a command like `dumpprivkey`, `sendtoaddress` and your funds will be gone, adios, sayonara.
+They will use nicknames like `Masternode Helper`, `Masternode Support`, `Cryptopia Support` and initially will seem good in their intentions. That is, until they manage to run a command like `dumpprivkey`, `sendtoaddress` and your funds will be gone, adios, sayonara.
 Please be aware and stay safe!
 
-**!!! This guide is for setting up a new MasterNode using the new (dark theme) Rupaya v4 wallet and chain !!!**
+**!!! This guide is for setting up a new MasterNode using the new (dark theme) SUB1X v1 wallet and chain !!!**
 
 ---
 
 ## Setup overview
 
 ### Hot Wallet
-In this guide, we refer to **Hot** wallet as the Rypaya wallet (Linux or Windows) that is running on the MasterNode server, with public IP address on it, providing services to the blockchain network for which it's rewarded with coins.
-It's **Hot** because it's out on the public internet 24/7, directly accessible on the peer-to-peer port (TCP **9020**), much more vulnerable than a **Cold** wallet. 
+In this guide, we refer to **Hot** wallet as the SUB1X instance (Linux or Windows) that is running on the MasterNode server, with public IP address on it, providing services to the blockchain network for which it's rewarded with coins.
+It's **Hot** because it's out on the public internet 24/7, directly accessible on the peer-to-peer port (TCP **5721**), which makes it much more vulnerable than a **Cold** wallet. 
 That's why we are running it with a balance of 0 coins.
 
 It's strongly recommended not to run a MasterNode Hot wallet at home! See a list of reasons [here](mn_dont_do_this_at_home.md).
 
 ### Cold Wallet
-On the other side, the **Cold** wallet (Windows, OSX, Linux) holds the RUPX collateral (**10,000** RUPX) and is used to enable the MasterNode server and collect rewards for its services.
+On the other side, the **Cold** wallet (Windows, OSX, Linux) holds the SUB1X collateral (**20** SUB1X) and is used to enable the MasterNode server and collect rewards for the services it performs.
 
-This is normally run at home, behind firewall, without direct connectivity from the internet, making it a more secure wallet. Once the MasterNode is enabled. The local wallet can then be stopped and MasterNode rewards will still show up on the next wallet start and sync.
+This is normally run at home, behind a firewall, without direct connectivity from the internet, making it a more secure wallet. Once the MasterNode is enabled, the local wallet can then be stopped and MasterNode rewards will still show up when the wallet is next opened and synced to the latest block.
 
 
 ---
 
-We are going to setup the Hot wallet first. This will reduce the overall time as the Hot wallet will sync the blockchain while we setup the Cold wallet. It also requires less back-and-forth between the two.
+We are going to setup the Hot wallet first. This will reduce the overall time as the Hot wallet will sync to the blockchain while we setup the Cold wallet. It also requires less back-and-forth between the two.
 
 ## **Hot** MasterNode VPS Setup(Part 1) with Linux CLI only wallet
 
-This will run 24/7 and provide services to the network via TCP port **9020** for which it will be rewarded with coins. It will run with an empty wallet reducing the risk of loosing the funds in the event of an attack.
+This will run 24/7 and provide services to the network via TCP port **5721** for which it will be rewarded with coins. It will run with an empty wallet reducing the risk of loosing the funds in the event of an attack.
 
 ### 1. Get a VPS server from a provider like Vultr, DigitalOcean, Linode, Amazon AWS, etc. 
 
@@ -68,32 +68,32 @@ echo '/mnt/3000MB.swap  none  swap  sw 0  0' >> /etc/fstab
 ```
 ufw allow 22/tcp
 ufw limit 22/tcp
-ufw allow 9020/tcp
+ufw allow 5721/tcp
 ufw logging on
 ufw --force enable
 ```
 
-If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **9020** from any IP address.
+If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **5721** from any IP address.
 
-### 5. Install the Rupaya CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
+### 5. Install the zSub1x CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
 
 
-Download and unpack the Rupaya wallet binaries by running the following commands:
+Download and unpack the zSub1x wallet binaries by running the following commands:
 
-This command uses a short github url to download [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
+This command uses a short github url to download [zSub1x-1.1.0-x86_64-linux.tar.gz](https://github.com/SuB1X-Coin/zSub1x/releases/download/1.2.1.0/zsub1x-linux-64bit.zip) and unpack the binaries in the PATH:
 
 ```
-wget -qO- https://git.io/vpeSF | sudo tar xvz -C /usr/local/bin/
-rupayad
+wget -qO- https://git.io/vp47z | sudo tar xvz -C /usr/local/bin/
+zsub1xd
 ```
 
-You'll get a start error like `Error: To use rupayad, or the -server option to rupaya-qt, you must set an rpcpassword in the configuration file`. It's expected because we haven't created the config file yet.
+You'll get a start error like `Error: To use zSub1xd, or the -server option to zsub1x-qt, you must set an rpcpassword in the configuration file`. It's expected because we haven't created the config file yet.
 
-The service will only start for a second and create the initial data directory(`/root/.rupaya/`).
+The service will only start for a second and create the initial data directory(`/root/.zsub1x/`).
 
 ### 6. Edit the MasterNode main wallet configuration file:
 ```
-nano /root/.rupaya/rupaya.conf
+nano /root/.zsub1x/zsub1x.conf
 ```
 
 Enter this wallet configuration data and change accordingly:
@@ -107,9 +107,9 @@ rpcbind=127.0.0.1
 maxconnections=512
 listen=1
 daemon=1
-externalip=<public_mn_ip_address_here>:9020
-masternodeaddr=<public_mn_ip_address_here>:9020
-addnode=seeds.rupx.io
+externalip=<public_mn_ip_address_here>:5721
+masternodeaddr=<public_mn_ip_address_here>:5721
+addnode=seeds.zsub1x.zone
 ```
 You can right click in SSH (putty) to paste all of the above
 
@@ -117,7 +117,7 @@ Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
 
 This is a real example:
 ```
-rpcuser=rupxuser
+rpcuser=sub1xxuser
 rpcpassword=someSUPERsecurePASSWORD3746375620
 rpcport=7020
 rpcallowip=127.0.0.1
@@ -126,21 +126,21 @@ rpcbind=127.0.0.1
 maxconnections=512
 listen=1
 daemon=1
-externalip=199.247.10.25:9020
-masternodeaddr=199.247.10.25:9020
-addnode=seeds.rupx.io
+externalip=199.247.10.25:5721
+masternodeaddr=199.247.10.25:5721
+addnode=seeds.zsub1x.zone
 ```
 
 The IP address (`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port (9020) in the Cold Wallet setup(Step 2) as well.
 
 ### 7. Start the service and let's obtain the value for `masternodeprivkey`:
 ```
-rupayad
+zsub1xd
 ```
 
 Wait a few seconds then run this command to generate the masternode private key:
 ```
-rupaya-cli masternode genkey
+zsub1x-cli masternode genkey
 ```
 
 Copy to your clipboard the value returned, similar to this:
@@ -150,10 +150,10 @@ Copy to your clipboard the value returned, similar to this:
 
 Edit the configuration file again: 
 ```
-nano /root/.rupaya/rupaya.conf
+nano /root/.zsub1x/zsub1x.conf
 ```
 
-Add these two lines at the end of the file. The second line is taking the value you received from the `rupaya-cli masternode genkey` command:
+Add these two lines at the end of the file. The second line is taking the value you received from the `zsub1x-cli masternode genkey` command:
 ```
 masternode=1
 masternodeprivkey=<your_masternode_genkey_output>
@@ -171,14 +171,14 @@ Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
 
 Stop the wallet and wait 2 minutes before attempting a start:
 ```
-rupaya-cli stop && sleep 120
-rupayad
+zsub1x-cli stop && sleep 120
+zsub1xd
 ```
 
 ### 8. Verify that the wallet is synching the blockchain:
 Run this command every few mins until you see the blocks increasing.
 ```
-rupaya-cli getinfo
+zsub1x-cli getinfo
 ``` 
 We can now go to the next step while this wallet syncs up with the network and gets social with the other MasterNodes.
 
@@ -194,10 +194,10 @@ Requirements:
 
 This is the wallet where the MasterNode collateral will have to be transferred and stored. After the setup is complete, this wallet doesn't have to run 24/7 and will be the one receiving the rewards.
 
-### 1. Install and open the Rupaya-Qt wallet on your machine.
+### 1. Install and open the zSub1x-Qt wallet on your machine.
 
  * If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
- * Download the newest Rupaya Qt wallet from: https://github.com/rupaya-project/rupaya/releases
+ * Download the newest Rupaya Qt wallet from: https://github.com/SuB1X-Coin/zSub1x/releases
  * The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
  * Start the wallet software and ignore the unidentified developer warning.
  * If you are prompted to Allow Access by the firewall, do so.
@@ -205,7 +205,7 @@ This is the wallet where the MasterNode collateral will have to be transferred a
 ![Wallet Sync Completed](images/qt-wallet-sync.png "Wallet Sync Completed")
  * If the wallet is not synching, add this line in the configuration file:
 ```
-addnode=seeds.rupx.io
+addnode=seed.zsub1x.zone
 ```
 The Qt wallet will open the configuration from `Tools` > `Open Wallet Configuration File`. Restart the wallet every time you update the configuration.
 
@@ -219,11 +219,11 @@ The Qt wallet will open the configuration from `Tools` > `Open Wallet Configurat
 
 Select the row of the newly added address and click **Copy** to store the destination address in the clipboard.
 
-### 3. Send EXACTLY 10000 RUPX coins to the address you just copied. Double check you've got the correct address before transferring the funds.
-If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY EXACTLY EXACTLY 10000 RUPX in. This is a common error that will cause the next step to not give you the transaction id needed later on. 
-For example, to withdraw from `Stocks.Exchange` the exact ammount for a MasterNode, you need to specify the ammount of **10000.001** to account for the fee.
+### 3. Send EXACTLY 20 SUB1X coins to the address you just copied. Double check you've got the correct address before transferring the funds.
+If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY 20 SUB1X coins. This is a common error that will cause the next step to not give you the transaction id needed later on. 
+For example, to withdraw from `CryptoBridge` the exact amount for a MasterNode, you need to account for the minimum fee of 0.001 coins, thereby m **20.001** to account for the fee.
 
-After sending, you can verify the balance in the Transactions tab. This can take **a few minutes** to be confirmed by the network. Go get a glass of water. No alcoholic beverages please, we are not out of the woods yet.
+After sending, you can verify the balance in the "Transactions" tab. This can take **several minutes** to be confirmed by the network. Go get a glass of water. No alcoholic beverages please, we are not out of the woods yet.
 
 ### 4. Open the debug console of the wallet in order to type a few commands. 
 
@@ -248,21 +248,21 @@ Go to `Tools` -> `Debug console`
 If you get prompted to choose a program, select a text editor like Notepad/TextEdit to open it.
 
 These are the default directories for the data directory where this file is stored:
- * Mac: `~/Library/Application Support/Rupaya`
- * Windows: `~\AppData\Roaming\Rupaya`
+ * Mac: `~/Library/Application Support/zSub1x`
+ * Windows: `~\AppData\Roaming\zSub1x`
 
 This is an example of what you need in `masternode.conf`.
 
 The file will contain an example that is commented out(with a # in front). Read it if it helps. Based on the above values, I would add this line in:
 ```
-MN1 199.247.10.25:9020 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487 1
+MN1 199.247.10.25:5721 87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487 1
 ```
 
 Where `MN1` is the node's alias.
 
 Where `199.247.10.25` is the external IP of the masternode server that will provide services to the network.
 
-Where `87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK` is your masternode key from (Part 1), the value used for `masternodeprivkey` in `/root/.rupaya/rupaya.conf`.
+Where `87LBTcfgkepEddWNFrJcut76rFp9wQG6rgbqPhqHWGvy13A9hJK` is your masternode key from (Part 1), the value used for `masternodeprivkey` in `/root/.zsub1x/zsub1x.conf`.
 
 Where `c19972e47d2a77d3ff23c2dbd8b2b204f9a64a46fed0608ce57cf76ba9216487` is your txhash from `masternode outputs`.
 
@@ -299,7 +299,7 @@ Alternatively, if the `startmasternode` command is not working, you can go to th
 Switch back to the MasterNode console.
 Give it a few minutes and go to the Linux VPS console and check the status of the masternode with this command:
 ```
-rupaya-cli masternode status
+zsub1x-cli masternode status
 ```
 
 If you see status `Not capable masternode: Hot node, waiting for remote activation`, you need to wait a bit longer for the blockchain to reach consensus. It's not uncommon to take 30 minutes before activation can be done.
@@ -307,6 +307,6 @@ If you see status `Not capable masternode: Hot node, waiting for remote activati
 If you see status `Masternode successfully started`, you've done it, congratulations. Go hug someone now :)
 It will take a few hours until the first rewards start coming in.
 
-You should now be able to see your MasterNode(s) **ENABLED** on this web page: [http://mn.rupx.io](http://mn.rupx.io)
+You should now be able to see your MasterNode(s) **ENABLED** on this web page: [http://sub1x.mn.zone/](http://sub1x.mn.zone/)
 
 Cheers !
