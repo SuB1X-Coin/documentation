@@ -1,4 +1,4 @@
-## Rupaya Open Source Documentation
+## SUB1X Open Source Documentation
 
 Here are the currently available guides:
 
@@ -14,4 +14,4 @@ Here are the currently available guides:
 
 ----
 
-If you contribute to this repository, please leave your Rupaya address so that we can thank you for your help.
+If you contribute to this repository, please leave your SUB1X address so that we can thank you for your help.
