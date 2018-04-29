@@ -215,7 +215,6 @@ The Qt wallet will open the configuration from `Tools` > `Open Wallet Configurat
    
    Click **New**, type in a label and press **Ok**.
 
-![Create Collateral Address](images/qt-wallet-new-collateral-address.png "Create Collateral Address")
 
 Select the row of the newly added address and click **Copy** to store the destination address in the clipboard.
 
