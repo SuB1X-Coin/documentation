@@ -1,4 +1,4 @@
-# Rupaya wallet upgrade guide
+# SUB1X wallet upgrade guide
 
 It is recommended that you upgrade your wallets (local or MasterNode ones) as soon as a new version is released.
 This ensures that the consensus across the decentralized network and improvements. These are crucial for the success of the project. Non upgraded wallets will be banned by the other nodes in the network at certain block thresholds. This will eliminate the node from the network and cause lost rewards and ban expire delays.
@@ -6,12 +6,12 @@ This ensures that the consensus across the decentralized network and improvement
 
 ## Backup your wallet
 
-It's a good practice to stop the wallet and backup your `wallet.dat`, `rupaya.conf` and `masternode.conf` files regularily, before upgrades or other operations.
+It's a good practice to stop the wallet and backup your `wallet.dat`, `zSub1x.conf` and `masternode.conf` files regularily, before upgrades or other operations.
 
 These are the default directories for the data directory where these files are stored:
- * Windows: `~\AppData\Roaming\Rupaya`
- * Linux: `~/.rupaya/`
- * Mac: `~/Library/Application Support/Rupaya`
+ * Windows: `~\AppData\Roaming\zSub1x`
+ * Linux: `~/.zSub1x/`
+ * Mac: `~/Library/Application Support/zSub1x`
 
 where `~` represents the home directory of the login user.
 
@@ -20,28 +20,28 @@ where `~` represents the home directory of the login user.
 
 Depending on the type of wallet you are running, here are a few ways to check the version that is currently running:
 
-* For Windows GUI wallet, select from the top menu: `Help` -> `About Rupaya Core`
-* For OSX GUI wallet, select from the top menu: `Rupaya Core` -> `About Rupaya Core`
+* For Windows GUI wallet, select from the top menu: `Help` -> `About zSub1x Core`
+* For OSX GUI wallet, select from the top menu: `Rupaya Core` -> `About zSub1x Core`
 
-If you see `Rupaya Core version v4.0.0 ...`, you are running version `4.0.0` of the Rupaya wallet
+If you see `zSub1x Core version v1.1.0 ...`, you are running version `1.1.0` of the Rupaya wallet
 
 For Linux CLI wallets, you can check the wallet version with this command from the shell:
 ```
-rupaya-cli getnetworkinfo | grep subversion
+zsub1x-cli getnetworkinfo | grep subversion
 ```
 
-You will see `"subversion" : "/Rupaya Core:4.0.0/"` when you are running version `4.0.0` of the Rupaya wallet
+You will see `"subversion" : "/zSub1x Core:1.1.0/"` when you are running version `1.1.0` of the zSub1x wallet
 
 
 ## Check for new wallet version releases
 
 Compiled wallets and source code archives will be available here for every release:
 
-https://github.com/rupaya-project/rupaya/releases
+https://github.com/SuB1X-Coin/zSub1x/releases
 
 ## Upgrade your wallet to a newer version
 
-[Download](https://github.com/rupaya-project/rupaya/releases) the archive with the new wallet. We are not covering compiling from sources in this guide to keep it short and sweet.
+[Download](https://github.com/SuB1X-Coin/zSub1x/releases) the archive with the new wallet. We are not covering compiling from sources in this guide to keep it short and sweet.
 
 ### Windows and OSX GUI wallets
 
@@ -59,34 +59,34 @@ Best to run these commands as user root to avoid having to deal with filesystem 
 
 #### 2. Check the current wallet version:
 ```
-rupaya-cli getnetworkinfo | grep subversion
+zsub1x-cli getnetworkinfo | grep subversion
 ```
 
 #### 3. Stop the wallet service with:
 ```
-rupaya-cli stop
+zsub1x-cli stop
 ```
-Run the following command until the `rupayad` process disappears. It usually takes around a minute for the process to this to happen.
+Run the following command until the `zsub1xd` process disappears. It usually takes around a minute for the process to this to happen.
 ```
-ps aux | grep rupayad | grep -v grep
+ps aux | grep zsub1xd | grep -v grep
 ```
 
 #### 4. Download the new wallet and unpack it:
 
-This command uses a short github url to download [rupaya-4.1.0-x86_64-linux.tar.gz](https://github.com/rupaya-project/rupaya/releases/download/v.4.1.0/rupaya-4.1.0-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
+This command uses a short github url to download [zsub1x-linux-64bit.zip](https://github.com/SuB1X-Coin/zSub1x/releases/download/1.2.1.0/zsub1x-linux-64bit.zip) and unpack the binaries in the PATH:
 ```
-wget -qO- https://git.io/vpeSF | sudo tar xvz -C /usr/local/bin/
+wget -qO- https://git.io/vp47z | sudo tar xvz -C /usr/local/bin/
 ```
 
 #### 5. Start the service:
 ```
-rupayad
+zsub1xd
 ```
 It will take 10 seconds or so before we can call it with the cli command.
 
 #### 6. Use the cli command to check the wallet version:
 ```
-rupaya-cli getnetworkinfo | grep subversion
+zsub1x-cli getnetworkinfo | grep subversion
 ```
 
 If this reports the new version, you are golden.
@@ -98,7 +98,7 @@ After every upgrade, please ensure that the wallet is synching the blocks and ha
 
 To check this on a Linux CLI wallet, run the following command:
 ```
-rupaya-cli getinfo | egrep "blocks|connections"
+zsub1x-cli getinfo | egrep "blocks|connections"
 ```
 
 For Windows or OSX GUI wallets you can find this information from the top menu: `Tools` -> `Information`. You are looking for:
@@ -108,7 +108,7 @@ For Windows or OSX GUI wallets you can find this information from the top menu: 
 
 ## If you are running a MasterNode
 
-Verify the status of the masternode with `rupaya-cli masternode status` from the CLI or `masternode status` from a GUI masternode.
+Verify the status of the masternode with `zsub1x-cli masternode status` from the CLI or `masternode status` from a GUI masternode.
 You should see `"message" : "Masternode successfully started"`
 
 If you get `"message" : "Not capable masternode: Hot node, waiting for remote activation."`, go the the upgraded Cold wallet and START the masternode again (i.e. `startmasternode alias false MN1`)
@@ -116,6 +116,6 @@ If you get `"message" : "Not capable masternode: Hot node, waiting for remote ac
 Wait a minute and then go to the MasterNode server, stop the wallet and start it again. Check the masternode status now.
 
 You might need to wait around 20 minutes before the masternode reports `Masternode successfully started`.
-After this, check the masternode on `http://mn.rupx.io`. If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
+After this, check the masternode on `http://sub1x.mn.zone/#`. If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
 
 Thank you for upgrading and helping this chain move forward :rocket:
