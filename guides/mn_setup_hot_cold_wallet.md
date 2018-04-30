@@ -75,7 +75,7 @@ ufw --force enable
 
 If you are running the MasterNode server in Amazon AWS or if additional firewalls are in place, you need to allow incoming connections on port TCP **5721** from any IP address.
 
-### 5. Install the zSub1x CLI wallet. Always download the latest [release available](https://github.com/rupaya-project/rupaya/releases), unpack it
+### 5. Install the zSub1x CLI wallet. Always download the latest [release available](https://github.com/SuB1X-Coin/zSub1x/releases), unpack it
 
 
 Download and unpack the zSub1x wallet binaries by running the following commands:
@@ -196,8 +196,8 @@ This is the wallet where the MasterNode collateral will have to be transferred a
 
 ### 1. Install and open the zSub1x-Qt wallet on your machine.
 
- * If you have a previous Rupaya wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
- * Download the newest Rupaya Qt wallet from: https://github.com/SuB1X-Coin/zSub1x/releases
+ * If you have a previous SUB1X wallet installed, backup the `wallet.dat`, uninstall it then delete its original data directory.
+ * Download the newest SUB1X Qt wallet from: https://github.com/SuB1X-Coin/zSub1x/releases
  * The Windows wallet needs to be extracted to a permanent location, OSX Wallet goes into `Applications`
  * Start the wallet software and ignore the unidentified developer warning.
  * If you are prompted to Allow Access by the firewall, do so.
