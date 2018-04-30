@@ -14,13 +14,13 @@ You can run them in the debug console of a Qt wallet as well, just remove the `$
 
 ```
 $ zsub1x-cli getnextsuperblock
-40800
+129600
 ```
 
 ### Create an address in the wallet that will receive the funds if the proposal is voted Yes by the MasterNodes:
 ```
 $ zsub1x-cli getaccountaddress "proposal1"
-
+xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X
 ```
 
 ### Create the proposal using the superblock and address from above. 
@@ -29,7 +29,7 @@ In this example we are asking for 0.04 SUB1X coins. Min amount that can be reque
 The URL is there to provide additional details about the proposal so that MN owners can decide if they should vote it yes or no.
 Proposal name is limited at 20 characters and URL at 64.
 ```
-$ zsub1x-cli preparebudget "test1" "http://sub1x-testnet.mn.zone/proposal1" 1 40800 "xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X" 0.04
+$ zsub1x-cli preparebudget "test1" "http://sub1x-testnet.mn.zone/proposal1" 1 129600 "xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X" 0.04
 c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f248b8ccada4
 ```
 
@@ -38,7 +38,7 @@ Use the help subcommand if you want more details about each parameter:
 zsub1x-cli help preparebudget
 ```
 
-### Wait for the 50 RUPX proposal fee transaction to gain 6 confirmations
+### Wait for the 0.04 SUB1X proposal fee transaction to gain 6 confirmations
 ```
 zsub1x-cli gettransaction c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f248b8ccada4
 
@@ -46,7 +46,7 @@ zsub1x-cli gettransaction c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f2
 
 ### Once we have 6 confirmations for the proposal fee, we can submit the proposal
 ```
-$ zsub1x-cli submitbudget "test1" "http://sub1x-testnet.mn.zone/proposal1" 1 40800 "xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X" 0.04 "c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f248b8ccada4"
+$ zsub1x-cli submitbudget "test1" "http://sub1x-testnet.mn.zone/proposal1" 1 129600 "xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X" 0.04 "c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f248b8ccada4"
 ```
 
 ### See all proposals for this budget cycle
@@ -57,8 +57,8 @@ $ zsub1x-cli getbudgetinfo
         "URL" : "http://sub1x-testnet.mn.zone/proposal1",
         "Hash" : "9001bbdc91c30d1a10a7863107280e3c6151b1b16481d43d2325f99e9a57bf7c",
         "FeeHash" : "c9567750806e2c1a01fd71984279d4d3f44c253d82389c9df583f248b8ccada4",
-        "BlockStart" : 40800,
-        "BlockEnd" : 41281,
+        "BlockStart" : 129600,
+        "BlockEnd" : 172800,
         "TotalPaymentCount" : 1,
         "RemainingPaymentCount" : 1,
         "PaymentAddress" : "xySqwRc5pNt7nD6KNr2QLWJ7sgpWD7Pj6X",
