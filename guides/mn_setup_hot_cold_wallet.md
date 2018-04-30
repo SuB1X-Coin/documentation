@@ -100,7 +100,7 @@ Enter this wallet configuration data and change accordingly:
 ```
 rpcuser=<alphanumeric_rpc_username>
 rpcpassword=<alphanumeric_rpc_password>
-rpcport=7020
+rpcport=5720
 rpcallowip=127.0.0.1
 rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
@@ -109,7 +109,6 @@ listen=1
 daemon=1
 externalip=<public_mn_ip_address_here>:5721
 masternodeaddr=<public_mn_ip_address_here>:5721
-addnode=sub1x.seeds.mn.zone
 ```
 You can right click in SSH (putty) to paste all of the above
 
@@ -117,9 +116,9 @@ Exit the editor by CTRL+X and hit Y + ENTER to commit your changes.
 
 This is a real example:
 ```
-rpcuser=sub1xxuser
-rpcpassword=someSUPERsecurePASSWORD3746375620
-rpcport=7020
+rpcuser=sub1xuser
+rpcpassword=someSUPERsecurePASSWORD37463665620
+rpcport=5720
 rpcallowip=127.0.0.1
 rpcconnect=127.0.0.1
 rpcbind=127.0.0.1
@@ -128,10 +127,9 @@ listen=1
 daemon=1
 externalip=199.247.10.25:5721
 masternodeaddr=199.247.10.25:5721
-addnode=sub1x.seeds.mn.zone
 ```
 
-The IP address (`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port (9020) in the Cold Wallet setup(Step 2) as well.
+The IP address (`199.247.10.25` in this example) will be different for you. Use the `ifconfig` command to find out your IP address, normally the address of the `eth0` interface. We are going to use this IP and port (5721) in the Cold Wallet setup(Step 2) as well.
 
 ### 7. Start the service and let's obtain the value for `masternodeprivkey`:
 ```
