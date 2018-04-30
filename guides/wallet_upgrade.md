@@ -21,9 +21,9 @@ where `~` represents the home directory of the login user.
 Depending on the type of wallet you are running, here are a few ways to check the version that is currently running:
 
 * For Windows GUI wallet, select from the top menu: `Help` -> `About zSub1x Core`
-* For OSX GUI wallet, select from the top menu: `Rupaya Core` -> `About zSub1x Core`
+* For OSX GUI wallet, select from the top menu: `zSub1x Core` -> `About zSub1x Core`
 
-If you see `zSub1x Core version v1.1.0 ...`, you are running version `1.1.0` of the Rupaya wallet
+If you see `zSub1x Core version v1.1.0 ...`, you are running version `1.1.0` of the zSub1x wallet
 
 For Linux CLI wallets, you can check the wallet version with this command from the shell:
 ```
