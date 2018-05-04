@@ -23,14 +23,14 @@ Depending on the type of wallet you are running, here are a few ways to check th
 * For Windows GUI wallet, select from the top menu: `Help` -> `About zSub1x Core`
 * For OSX GUI wallet, select from the top menu: `zSub1x Core` -> `About zSub1x Core`
 
-If you see `zSub1x Core version v1.1.0 ...`, you are running version `1.1.0` of the zSub1x wallet
+If you see `zSub1x Core version v1.2.1 ...`, you are running version `1.2.1` of the zSub1x wallet
 
 For Linux CLI wallets, you can check the wallet version with this command from the shell:
 ```
 zsub1x-cli getnetworkinfo | grep subversion
 ```
 
-You will see `"subversion" : "/zSub1x Core:1.1.0/"` when you are running version `1.1.0` of the zSub1x wallet
+You will see `"subversion" : "/zSub1x Core:1.2.1/"` when you are running version `1.2.1` of the zSub1x wallet
 
 
 ## Check for new wallet version releases
@@ -73,9 +73,9 @@ ps aux | grep zsub1xd | grep -v grep
 
 #### 4. Download the new wallet and unpack it:
 
-This command uses a short github url to download [zsub1x-linux-64bit.zip](https://github.com/SuB1X-Coin/zSub1x/releases/download/1.2.1.0/zsub1x-linux-64bit.zip) and unpack the binaries in the PATH:
+This command uses a short github url to download [zsub1x-1.3.4-x86_64-linux.tar.gz](https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
 ```
-wget -qO- https://git.io/vp47z | sudo tar xvz -C /usr/local/bin/
+wget -qO- https://git.io/vpV8V | sudo tar xvz -C /usr/local/bin/
 ```
 
 #### 5. Start the service:
