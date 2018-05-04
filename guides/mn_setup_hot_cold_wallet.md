@@ -80,10 +80,10 @@ If you are running the MasterNode server in Amazon AWS or if additional firewall
 
 Download and unpack the zSub1x wallet binaries by running the following commands:
 
-This command uses a short github url to download [zSub1x-1.1.0-x86_64-linux.tar.gz](https://github.com/SuB1X-Coin/zSub1x/releases/download/1.2.1.0/zsub1x-linux-64bit.zip) and unpack the binaries in the PATH:
+This command uses a short github url to download [zsub1x-1.3.4-x86_64-linux.tar.gz](https://github.com/SuB1X-Coin/zSub1x/releases/download/v1.3.4/zsub1x-1.3.4-x86_64-linux.tar.gz) and unpack the binaries in the PATH:
 
 ```
-wget -qO- https://git.io/vp47z | sudo tar xvz -C /usr/local/bin/
+wget -qO- https://git.io/vpV8V | sudo tar xvz -C /usr/local/bin/
 zsub1xd
 ```
 
@@ -218,7 +218,7 @@ Select the row of the newly added address and click **Copy** to store the destin
 
 ### 3. Send EXACTLY 20 SUB1X coins to the address you just copied. Double check you've got the correct address before transferring the funds.
 If you are sending from an exchange, make sure you account for the withdrawal fee so that you get EXACTLY 20 SUB1X coins. This is a common error that will cause the next step to not give you the transaction id needed later on. 
-For example, to withdraw from `CryptoBridge` the exact amount for a MasterNode, you need to account for the minimum fee of 0.001 coins, thereby m **20.001** to account for the fee.
+For example, to withdraw from `CryptoBridge` the exact amount for a MasterNode, you need to account for the withdrawal fee. At the moment of writing **20.021211** was needed. Try that or another value until you see in the confirmation screen `You will receive: 20 SUBIX`. You can also form the collateral after the coins make it to your wallet.
 
 After sending, you can verify the balance in the "Transactions" tab. This can take **several minutes** to be confirmed by the network. Go get a glass of water. No alcoholic beverages please, we are not out of the woods yet.
 
