@@ -116,6 +116,6 @@ If you get `"message" : "Not capable masternode: Hot node, waiting for remote ac
 Wait a minute and then go to the MasterNode server, stop the wallet and start it again. Check the masternode status now.
 
 You might need to wait around 20 minutes before the masternode reports `Masternode successfully started`.
-After this, check the masternode on `http://sub1x.mn.zone/#`. If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
+After this, check the masternode on [sub1x.mn.zone](http://sub1x.mn.zone). If the node is listed with `a few sec` in the `Active Time` column, check the status of the masternode again and ensure you get `"message" : "Masternode successfully started"`. You might also need to stop and start the masternode wallet again to activate it.
 
 Thank you for upgrading and helping this chain move forward :rocket:
